@@ -23,6 +23,7 @@ export default async function NavBar() {
         <GithubButton />
         <ModeToggle />
         {session ? <UserButton user={session.user} /> : <SignIn />}
+        <p>MEH!</p>
       </div>
     </nav>
   )
