@@ -24,9 +24,7 @@ export default async function NavBar() {
       <div className="flex gap-1 items-center">
         <GithubButton />
         <ModeToggle />
-        {/* {session ? <UserButton user={session.user} /> : <SignIn />} */}
-        <SignIn />
-        {/* <UserButton user={session?.user} /> */}
+        {session ? <UserButton user={session.user} /> : <SignIn />}
       </div>
     </nav>
   )
