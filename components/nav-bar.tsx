@@ -17,13 +17,16 @@ import Link from 'next/link'
 export default async function NavBar() {
   const session = await auth()
 
+  console.log({ session })
+
   return (
     <nav className="w-full flex items-center justify-end p-4">
       <div className="flex gap-1 items-center">
         <GithubButton />
         <ModeToggle />
-        {session ? <UserButton user={session.user} /> : <SignIn />}
-        {session ? <p>MEH!</p> : <p>HMM!</p>}
+        {/* {session ? <UserButton user={session.user} /> : <SignIn />} */}
+        <SignIn />
+        {/* <UserButton user={session?.user} /> */}
       </div>
     </nav>
   )
