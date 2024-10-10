@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '~/components/theme-provider'
 import NavBar from '~/components/nav-bar'
 import Providers from '~/components/providers'
+import ScreenSizeIndicator from '~/components/screen-size-indicator'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -38,6 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Providers>
+            <ScreenSizeIndicator />
             <NavBar />
             {children}
           </Providers>
