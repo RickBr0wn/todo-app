@@ -41,7 +41,7 @@ export default function RootLayout({
           <Providers>
             <ScreenSizeIndicator />
             <NavBar />
-            {children}
+            <div className="mx-auto w-[460px] mt-12">{children}</div>
           </Providers>
         </ThemeProvider>
       </body>
