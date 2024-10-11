@@ -1,4 +1,6 @@
 import { auth } from '~/auth'
+import TodoInputForm from '~/components/todo-input-form'
+import TodoItem from '~/components/todo-item'
 import prisma from '~/prisma'
 
 export default async function Home() {
@@ -13,22 +15,31 @@ export default async function Home() {
 
   if (session?.user?.id) {
     try {
-      const todos = await prisma.post.findMany()
+      const todos = await prisma.todo.findMany({
+        include: {
+          author: true,
+        },
+      })
 
       if (todos.length > 0) {
         return (
           <div className="flex flex-col items-center justify-center gap-4 p-4">
-            <h1>Todos</h1>
-            <ul className="list-disc list-inside">
+            <TodoInputForm />
+            <ul className="w-full flex flex-col gap-2">
               {todos.map(todo => (
-                <li key={todo.id}>{todo.title}</li>
+                <TodoItem key={todo.id} todo={todo} />
               ))}
             </ul>
           </div>
         )
       }
 
-      return <p className="text-center">You have no posts</p>
+      return (
+        <div className="flex flex-col items-center justify-center gap-4 p-4">
+          <TodoInputForm />
+          <p>You have no posts</p>
+        </div>
+      )
     } catch (error) {
       console.log(error)
       throw new Error('Something went wrong')

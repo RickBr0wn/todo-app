@@ -8,16 +8,11 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
-import Link from 'next/link'
 
 export default async function NavBar() {
   const session = await auth()
-
-  console.log({ session })
 
   return (
     <nav className="w-full flex items-center justify-end p-4">
@@ -41,15 +36,6 @@ export function UserButton({ user }: UserButtonProps) {
         <UserAvatar user={user} />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <Link href="/profile">Profile</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Link href="/settings">Settings</Link>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
         <DropdownMenuItem>
           <form
             action={async () => {
