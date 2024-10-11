@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App ✨
 
-## Getting Started
+Welcome to **Todo App**, where managing your tasks is made simple, elegant, and responsive. Built with the latest web technologies, this app combines clean UI with powerful features, ensuring your productivity is just a few clicks away.
 
-First, run the development server:
+## 🚀 Features
+
+- **Effortless Task Management**: Add, edit, and delete your todos with ease.
+- **GitHub Authentication**: Secure sign-in via GitHub OAuth.
+- **Dark Mode/Light Mode**: Switch between themes that suit your mood.
+- **Responsive Design**: Looks perfect on any device thanks to Tailwind CSS.
+- **Powerful Backend**: Prisma ORM and Vercel Postgres provide seamless data management.
+
+## 💻 Tech Stack
+
+- **Next.js**: The core framework powering the app.
+- **Prisma**: Database ORM for easy querying and migrations.
+- **Vercel Postgres**: Reliable database on the Vercel platform.
+- **Tailwind CSS**: For fast and responsive design.
+- **Radix UI**: Modern components for dropdowns, avatars, and more.
+- **NextAuth.js**: GitHub OAuth integration for user authentication.
+- **Lucide Icons**: Beautiful and customizable icons.
+
+## 🚧 Installation Guide
+
+Getting the app up and running is a breeze!
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/username/todo-app.git
+   cd todo-app
+   ```
+
+2. **Install dependencies** with pnpm:
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up your environment variables** in a `.env` file:
+
+   ```env
+   POSTGRES_DATABASE=""
+   POSTGRES_HOST=""
+   POSTGRES_PASSWORD=""
+   POSTGRES_PRISMA_URL=""
+   POSTGRES_URL=""
+   POSTGRES_URL_NON_POOLING=""
+   POSTGRES_URL_NO_SSL=""
+   POSTGRES_USER=""
+
+   NEXTAUTH_SECRET=""
+   NEXTAUTH_URL=""
+
+   AUTH_GITHUB_ID=""
+   AUTH_GITHUB_SECRET=""
+   ```
+
+4. **Set up the database schema**:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm exec prisma db push
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. **Run the app** in development mode:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   pnpm dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Deployment
 
-## Learn More
+Deployed effortlessly on [Vercel](https://vercel.com/), with Vercel Postgres handling your data needs.
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is open-sourced under the MIT License. Feel free to use, modify, and share!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Enjoy organizing your tasks with ease!** ☑️
