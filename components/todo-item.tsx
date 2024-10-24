@@ -16,11 +16,21 @@ export type TodoItemProps = {
 }
 
 export default function TodoItem({ todo }: TodoItemProps) {
+  function truncateString(str: string, num: number) {
+    if (str.length <= num) {
+      return str
+    }
+    return str.slice(0, num) + '...'
+  }
+
   return (
     <li className="w-full">
       <Card className="w-full flex items-center gap-4 py-1 px-4">
         <div className="flex flex-1">
-          {todo.title.charAt(0).toUpperCase() + todo.title.slice(1)}
+          {truncateString(
+            todo.title.charAt(0).toUpperCase() + todo.title.slice(1),
+            26
+          )}
         </div>
         <div className="text-muted-foreground text-xs">
           {todo.createdAt.toLocaleDateString()}
